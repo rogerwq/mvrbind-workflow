@@ -1,15 +1,18 @@
 import os
 from Bio import SeqIO
 
-WORKSPACE = "/workspace"
+IN_DIR   = "inputs"
+OUT_DIR  = "outputs"
+FASTA_DIR = "/opt/MVRBind/data_process/data/fasta"
 
-fasta_dir = os.path.join(WORKSPACE, "fasta")
-pred_path = os.path.join(WORKSPACE, "predictions.txt")
+os.makedirs(OUT_DIR, exist_ok=True)
+
+pred_path = os.path.join(IN_DIR, "predictions.txt")
 
 sequences = []
-for fname in sorted(os.listdir(fasta_dir)):
+for fname in sorted(os.listdir(FASTA_DIR)):
     if fname.endswith(".fasta") or fname.endswith(".fa"):
-        for rec in SeqIO.parse(os.path.join(fasta_dir, fname), "fasta"):
+        for rec in SeqIO.parse(os.path.join(FASTA_DIR, fname), "fasta"):
             sequences.append((rec.id, str(rec.seq)))
 
 with open(pred_path) as f:
@@ -70,7 +73,7 @@ html = f"""<!DOCTYPE html>
 </body>
 </html>"""
 
-out_path = os.path.join(WORKSPACE, "report.html")
+out_path = os.path.join(OUT_DIR, "report.html")
 with open(out_path, "w") as f:
     f.write(html)
 
