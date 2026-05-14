@@ -1,0 +1,6 @@
+name = "RNA Binding Site Prediction (MVRBind)"
+description = "Predicts RNA-small molecule binding sites using MVRBind with the pre-packaged 2JUKA example"
+
+[dependencies]
+01-predict = ["00-download"]
+02-report = ["01-predict"]

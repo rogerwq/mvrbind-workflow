@@ -1,0 +1,9 @@
+name = "Download 2JUKA Example Data"
+description = "Copies pre-packaged 2JUKA RNA data from the MVRBind container into the workspace"
+outputs = ["pdb/*", "fasta/*", "aligned/*", "em/*", "asa/*", "pt/*"]
+
+[container]
+image = "ghcr.io/chiral-data/mvrbind:2026_05_14"
+
+[scripts]
+run = "run.sh"

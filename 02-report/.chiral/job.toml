@@ -1,0 +1,10 @@
+name = "Generate Report"
+description = "Generates a color-coded HTML report of predicted binding sites mapped to the RNA sequence"
+inputs = ["predictions.txt", "fasta/*"]
+outputs = ["report.html"]
+
+[container]
+image = "ghcr.io/chiral-data/mvrbind:2026_05_14"
+
+[scripts]
+run = "run.sh"
