@@ -1,6 +1,6 @@
 name = "Download 2JUKA Example Data"
 description = "Copies pre-packaged 2JUKA RNA data from the MVRBind container into the workspace"
-outputs = ["pdb/*", "fasta/*", "aligned/*", "em/*", "asa/*", "pt/*"]
+outputs = ["pdb", "fasta", "aligned", "em", "asa", "pt"]
 
 [container]
 image = "mvrbind:2026_05_14"
