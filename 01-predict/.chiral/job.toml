@@ -1,6 +1,6 @@
 name = "Predict Binding Sites"
 description = "Runs MVRBind to predict per-nucleotide RNA-small molecule binding sites"
-inputs = ["pdb/*", "fasta/*", "aligned/*", "em/*", "asa/*", "pt/*"]
+inputs = ["pdb", "fasta", "aligned", "em", "asa", "pt"]
 outputs = ["predictions.txt"]
 
 [container]
