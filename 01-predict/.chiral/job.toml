@@ -1,7 +1,7 @@
 name = "Predict Binding Sites"
 description = "Runs MVRBind to predict per-nucleotide RNA-small molecule binding sites"
 inputs = ["pdb", "fasta", "aligned", "em", "asa", "pt"]
-outputs = ["predictions.txt"]
+outputs = ["predictions.txt", "2JUKA.fasta"]
 
 [container]
 image = "mvrbind:2026_05_14"

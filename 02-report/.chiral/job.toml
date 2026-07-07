@@ -1,6 +1,6 @@
 name = "Generate Report"
 description = "Generates a color-coded HTML report of predicted binding sites mapped to the RNA sequence"
-inputs = ["predictions.txt", "fasta/*"]
+inputs = ["predictions.txt", "2JUKA.fasta"]
 outputs = ["report.html"]
 
 [container]
