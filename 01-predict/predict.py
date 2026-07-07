@@ -1,5 +1,6 @@
 import sys
 import os
+import shutil
 
 sys.path.insert(0, "/opt/MVRBind")
 
@@ -53,6 +54,10 @@ out_path = os.path.join(OUT_DIR, "predictions.txt")
 with open(out_path, "w") as f:
     for preds in results:
         f.write(" ".join(map(str, preds)) + "\n")
+
+# 02-report only depends on this job, not on 00-download, so forward the
+# fasta it already has here for 02-report to pick up.
+shutil.copy(os.path.join(IN_DIR, "fasta", "2JUKA.fasta"), os.path.join(OUT_DIR, "2JUKA.fasta"))
 
 print(f"Predictions written to {out_path}")
 for preds in results:
